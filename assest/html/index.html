@@ -1,0 +1,401 @@
+<!DOCTYPE html>
+<!--[if lt IE 7 ]><html class="ie ie6" lang="en"> <![endif]-->
+<!--[if IE 7 ]><html class="ie ie7" lang="en"> <![endif]-->
+<!--[if IE 8 ]><html class="ie ie8" lang="en"> <![endif]-->
+<!--[if (gte IE 9)|!(IE)]><!-->
+<html lang="en">
+<!--<![endif]-->
+<head>
+
+<!-- Basic Page Needs
+  ================================================== -->
+<meta charset="utf-8">
+<title>Apex Responsive Portfolio Template</title>
+<meta name="description" content="">
+<meta name="author" content="">
+<!--[if lt IE 9]>
+		<script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+	<![endif]-->
+
+<!-- Mobile Specific Metas
+  ================================================== -->
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=0">
+
+<!-- CSS
+  ================================================== -->
+<link rel="stylesheet" href="css/base.css">
+<link rel="stylesheet" href="css/skeleton.css">
+<link rel="stylesheet" href="css/screen.css">
+<!--[if IE 7]>
+        <link rel="stylesheet" href="stylesheets/ie7.css">
+    <![endif]-->
+
+<!-- Favicons
+	================================================== -->
+<link rel="shortcut icon" href="images/favicon.ico">
+<link rel="apple-touch-icon" href="images/apple-touch-icon.png">
+<link rel="apple-touch-icon" sizes="72x72" href="images/apple-touch-icon-72x72.png">
+<link rel="apple-touch-icon" sizes="114x114" href="images/apple-touch-icon-114x114.png">
+
+<!-- Fonts
+	================================================== -->
+<link href='http://fonts.googleapis.com/css?family=Bitter' rel='stylesheet' type='text/css'>
+</head>
+
+<body>
+
+<!-- Site Backgrounds
+	================================================== --> 
+
+<!-- Change to class="poswrapheaderline wide" and class="headerline full" for a full-width header line -->
+<div class="poswrapheaderline">
+	<div class="headerline"></div>
+</div>
+<!-- Remove or uncomment depending on if you want a background image or tile --> 
+<!--<div class="tiledbackground"></div>--> 
+<img src="images/bg2.jpg" alt="" id="background" /> 
+<!-- Change to class="poswrapper wide" and class="whitebackground full" for a full-width site background -->
+<div class="poswrapper">
+	<div class="whitebackground"></div>
+</div>
+<div class="container main portfolio4column"> 
+	
+	<!-- Header | Logo, Menu
+		================================================== -->
+	
+	<div class="sixteen columns header">
+		<div class="logo"><a href="index.html"><img src="images/logo.png" alt="" /></a></div>
+		<div class="logotext">a responsive minimal portfolio template.</div>
+		<div class="mainmenu">
+			<div id="mainmenu" class="ddsmoothmenu">
+				<ul>
+					<li><a href="#">Home</a>
+						<ul>
+							<li><a href="index.html">Home Layout</a></li>
+							<li><a href="index_alternative.html">Another Layout Example</a></li>
+						</ul>
+					</li>
+					<li><a href="#">About</a>
+						<ul>
+							<li><a href="page_full.html">Full Page</a></li>
+							<li><a href="page_sidebar_left.html">Sidebar Left Page</a></li>
+							<li><a href="page_sidebar_right.html">Sidebar Right Page</a></li>
+						</ul>
+					</li>
+					<li><a href="#">Portfolio</a>
+						<ul>
+							<li><a href="portfolio_4column.html">Portfolio Four Columns</a></li>
+							<li><a href="portfolio_2column.html">Portfolio Two Columns</a></li>
+							<li><a href="portfolio_1column.html">Portfolio With Sidebar</a></li>
+							<li><a href="portfolio_single.html">Project Detail Page</a></li>
+						</ul>
+					</li>
+					<li><a href="#">Blog</a>
+						<ul>
+							<li><a href="blog_overview.html">Blog Overview</a></li>
+							<li><a href="blog_single.html">Single Blog Post</a></li>
+						</ul>
+					</li>
+					<li><a href="contact.html">Contact</a></li>
+				</ul>
+				<br style="clear: left" />
+			</div>
+			
+			<!-- Responsive Menu -->
+			
+			<form id="responsive-menu" action="#" method="post">
+				<select>
+					<option value="">Navigation</option>
+				</select>
+			</form>
+		</div>
+		<div class="headerdivider"></div>
+	</div>
+	
+	<!-- Slider
+		================================================== -->
+	
+	<div class="sixteen columns row">
+		<div class="twelve columns alpha">
+			<div class="flexslider clearfix">
+				<ul class="slides">
+					<li><img src="images/banner/banner2.jpg" alt="" />
+						<p class="flex-caption">This is a pretty line of caption text.</p>
+					</li>
+					<li><img src="images/banner/banner1.jpg" alt="" /></li>
+					<li><img src="images/banner/banner4.jpg" alt="" />
+						<p class="flex-caption">Mindblowing company slogan.</p>
+					</li>
+				</ul>
+			</div>
+		</div>
+		<div class="four columns omega slidertext">
+			<h2>Sleek<br/>
+				And Effective<span style="color:#ff004e;">.</span></h2>
+			<p><em>6 years of experience</em><br/>
+				in 
+				Professional Web Design.<br/>
+				Over <em>5.000 clients in 24 countries</em> all over the world.<br/>
+				<br/>
+				The result is always the same: <em>Customer satisfaction and supreme quality!</em></p>
+			<a href="#" class="link">&raquo; Read More</a> </div>
+	</div>
+	
+	<!-- Portfolio Teasers
+		================================================== -->
+	
+	<div class="sixteen columns row divide">
+		<h3 class="titledivider">Our Work.</h3>
+		<div class="rightlink"><a href="#" class="titlelink">&raquo; Portfolio</a></div>
+		<div class="dividerline"></div>
+	</div>
+	<div class="sixteen columns row portfolio_filter">
+		<ul>
+			<li><a class="portfolio_selector" data-group="all-group" href="#">All Projects</a><span>|</span></li>
+			<li><a class="portfolio_selector" data-group="web-group" href="#">Web Design</a><span>|</span></li>
+			<li><a class="portfolio_selector" data-group="photoshop-group" href="#">Photoshop</a><span>|</span></li>
+			<li><a class="portfolio_selector" data-group="concepts-group" href="#">Concepts</a><span>|</span></li>
+			<li><a class="portfolio_selector" data-group="print-group" href="#">Print Design</a></li>
+		</ul>
+	</div>
+	<div class="clear"></div>
+	<div class="sixteen columns row teasers portfolio">
+		<div class="four columns teaser all-group web-group"> <a href="#" data-text="» Visit Project" class="hovering"><img src="images/thumbs/home_teaser1.jpg" alt="" class="scale-with-grid" /></a>
+			<div class="pluswrap"> <a href="#" class="bigplus"></a>
+				<div class="topline"><a href="#">Desktopography</a></div>
+				<div class="subline">Web Design</div>
+			</div>
+		</div>
+		<div class="four columns teaser all-group photoshop-group"> <a href="#" data-text="» Visit Project" class="hovering"><img src="images/thumbs/home_teaser2.jpg" alt="" class="scale-with-grid" /></a>
+			<div class="pluswrap"> <a href="#" class="bigplus"></a>
+				<div class="topline"><a href="#">Wurzburg</a></div>
+				<div class="subline">Photoshop</div>
+			</div>
+		</div>
+		<div class="four columns teaser all-group concepts-group"> <a href="#" data-text="» Visit Project" class="hovering"><img src="images/thumbs/home_teaser3.jpg" alt="" class="scale-with-grid" /></a>
+			<div class="pluswrap"> <a href="#" class="bigplus"></a>
+				<div class="topline"><a href="#">Frankfurt</a></div>
+				<div class="subline">Concepts</div>
+			</div>
+		</div>
+		<div class="four columns teaser all-group print-group"> <a href="#" data-text="» Visit Project" class="hovering"><img src="images/thumbs/home_teaser4.jpg" alt="" class="scale-with-grid" /></a>
+			<div class="pluswrap"> <a href="#" class="bigplus"></a>
+				<div class="topline"><a href="#">Amsterdam</a></div>
+				<div class="subline">Print Design</div>
+			</div>
+		</div>
+		<div class="four columns teaser all-group concepts-group"> <a href="#" data-text="» Visit Project" class="hovering"><img src="images/thumbs/home_teaser5.jpg" alt="" class="scale-with-grid" /></a>
+			<div class="pluswrap"> <a href="#" class="bigplus"></a>
+				<div class="topline"><a href="#">Canberra</a></div>
+				<div class="subline">Concepts</div>
+			</div>
+		</div>
+		<div class="four columns teaser all-group print-group"> <a href="#" data-text="» Visit Project" class="hovering"><img src="images/thumbs/home_teaser6.jpg" alt="" class="scale-with-grid" /></a>
+			<div class="pluswrap"> <a href="#" class="bigplus"></a>
+				<div class="topline"><a href="#">Townsville</a></div>
+				<div class="subline">Print Design</div>
+			</div>
+		</div>
+		<div class="four columns teaser all-group web-group"> <a href="#" data-text="» Visit Project" class="hovering"><img src="images/thumbs/home_teaser7.jpg" alt="" class="scale-with-grid" /></a>
+			<div class="pluswrap"> <a href="#" class="bigplus"></a>
+				<div class="topline"><a href="#">Dragon Plane</a></div>
+				<div class="subline">Web Design</div>
+			</div>
+		</div>
+		<div class="four columns teaser all-group photoshop-group"> <a href="#" data-text="» Visit Project" class="hovering"><img src="images/thumbs/home_teaser8.jpg" alt="" class="scale-with-grid" /></a>
+			<div class="pluswrap"> <a href="#" class="bigplus"></a>
+				<div class="topline"><a href="#">Nuremberg</a></div>
+				<div class="subline">Photoshop</div>
+			</div>
+		</div>
+		<div class="clear"></div>
+	</div>
+	<div class="clear"></div>
+	
+	<!-- News
+		================================================== -->
+	
+	<div class="eight columns row">
+		<div class="eight columns divide alpha">
+			<h3 class="titledivider">Latest News.</h3>
+			<div class="rightlink"><a href="#" class="titlelink">&raquo; Optional Link</a></div>
+			<div class="dividerlinehalf"></div>
+		</div>
+		<div class="eight columns alpha">
+			<div class="eight columns alpha newsteaser row"> <a href="#" class="borderhover"><img src="images/thumbs/from_blog1.jpg" alt="" width="75" height="75" /></a>
+				<div class="topline"><a href="#">Blogpost With Image</a></div>
+				<div class="subline">Jan 23 by Admin</div>
+				<div class="newsexcerpt">Tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua diam nonumy eirmod...</div>
+			</div>
+			<div class="eight columns alpha newsteaser"> <a href="#" class="borderhover"><img src="images/thumbs/from_blog2.jpg" alt="" width="75" height="75" /></a>
+				<div class="topline"><a href="#">Blogpost Slideshow</a></div>
+				<div class="subline">Jan 23 by Admin</div>
+				<div class="newsexcerpt">Tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua diam nonumy eirmod...</div>
+			</div>
+		</div>
+	</div>
+	
+	<!-- Info Text 
+		================================================== -->
+	
+	<div class="eight columns row">
+		<div class="eight columns divide alpha">
+			<h3 class="titledivider">About.</h3>
+			<div class="rightlink"><a href="#" class="titlelink">&raquo; Optional Link</a></div>
+			<div class="dividerlinehalf"></div>
+		</div>
+		<div class="eight columns alpha">
+			<p>Apex is a fully-responsive minimal portfolio template which will blow your clients minds. You can also get the <a href="http://themeforest.net/item/apex-responsive-portfolio-wordpress-theme/1597958?ref=damojo" target="_blank" class="link">WordPress Version</a>.</p>
+			<ul class="tabs">
+				<li><a class="active" href="#concept">Concept</a></li>
+				<li><a href="#design">Design</a></li>
+				<li><a href="#support">Support</a></li>
+			</ul>
+			<ul class="tabs-content clearfix">
+				<li class="active clearfix" id="concept">
+					<div class="two_third">
+						<p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum.</p>
+					</div>
+					<div class="one_third lastcolumn">
+						<blockquote>"What a wonderful HTML Template!"</blockquote>
+					</div>
+					<div class="clear"></div>
+				</li>
+				<li id="design" class="clearfix">
+					<p><img src="images/mobile.jpg" alt="" class="left"/>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum.</p>
+				</li>
+				<li id="support" class="clearfix">
+					<div class="one_third">
+						<p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor.</p>
+					</div>
+					<div class="one_third">
+						<p>Tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua.</p>
+					</div>
+					<div class="one_third lastcolumn">
+						<p>Sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum.</p>
+					</div>
+					<div class="clear"></div>
+				</li>
+			</ul>
+			<div class="clear"></div>
+		</div>
+	</div>
+	
+	<!-- Bottom Padding Adjust
+       ================================================== 
+       <div class="sixteen columns bottomadjust"></div>--> 
+	
+</div>
+<!-- container --> 
+
+<!-- Footer
+	================================================== --> 
+
+<!-- Change to class="container footerwrap full" for a full-width footer -->
+<div class="container footerwrap">
+	<div class="footer">
+		<div class="sixteen columns">
+			<div class="four columns widget alpha">
+				<h5>Latest Projects</h5>
+				<div class="widget_portfolio">
+					<ul>
+						<li class="clearfix"><a href="#" class="borderhover"><img src="images/thumbs/pop_folio1.jpg" alt="" /></a></li>
+						<li class="clearfix"><a href="#" class="borderhover"><img src="images/thumbs/pop_folio2.jpg" alt="" /></a></li>
+						<li class="clearfix"><a href="#" class="borderhover"><img src="images/thumbs/pop_folio3.jpg" alt="" /></a></li>
+						<li class="clearfix"><a href="#" class="borderhover"><img src="images/thumbs/pop_folio4.jpg" alt="" /></a></li>
+						<li class="clearfix"><a href="#" class="borderhover"><img src="images/thumbs/pop_folio5.jpg" alt="" /></a></li>
+						<li class="clearfix"><a href="#" class="borderhover"><img src="images/thumbs/pop_folio6.jpg" alt="" /></a></li>
+					</ul>
+					<div class="clear"></div>
+				</div>
+			</div>
+			<div class="four columns widget">
+				<h5>Twitter Feed</h5>
+				<!-- Twitter Embedded Timeline Markup Replace Here Start --> 
+				With the Twitter API 1.1 you need to go <a href="https://twitter.com/settings/widgets" target="_blank">here</a> to create a twitter widget.<br/>
+				Paste the generated code here! 
+				<!-- Twitter Embedded Timeline Markup Replace Here End --> 
+			</div>
+			<div class="four columns widget">
+				<h5>Popular Blog Posts</h5>
+				<div class="widget_blogposts">
+					<ul>
+						<li class="clearfix"> <a href="#" class="borderhover"><img src="images/thumbs/pop_blog1.jpg" alt="" /></a>
+							<div class="postlink"><a href="#">Pretty Widgets</a></div>
+							<div class="subline">January 23, 2012</div>
+						</li>
+						<li class="clearfix"> <a href="#" class="borderhover"><img src="images/thumbs/pop_blog2.jpg" alt="" /></a>
+							<div class="postlink"><a href="#">Convenient Structure</a></div>
+							<div class="subline">January 21, 2012</div>
+						</li>
+						<li class="clearfix"> <a href="#" class="borderhover"><img src="images/thumbs/pop_blog3.jpg" alt="" /></a>
+							<div class="postlink"><a href="#">Another Blog Post</a></div>
+							<div class="subline">January 17, 2012</div>
+						</li>
+						<li class="clearfix"> <a href="#" class="borderhover"><img src="images/thumbs/pop_blog4.jpg" alt="" /></a>
+							<div class="postlink"><a href="#">Responsive Layout</a></div>
+							<div class="subline">January 3, 2012</div>
+						</li>
+					</ul>
+					<div class="clear"></div>
+				</div>
+			</div>
+			<div class="four columns widget omega">
+				<h5>Quick Contact</h5>
+				<div>
+					<form id="quickcontact" method="post" action="#">
+						<input type="text" name="name" id="quickcontact_name" class="requiredfield" onFocus="if(this.value == 'Name *') { this.value = ''; }" onBlur="if(this.value == '') { this.value = 'Name *'; }" value='Name *'/>
+						<input type="text" name="email" id="quickcontact_email" class="requiredfield" onFocus="if(this.value == 'Email *') { this.value = ''; }" onBlur="if(this.value == '') { this.value = 'Email *'; }" value='Email *'/>
+						<textarea name="message" id="quickcontact_message" class="requiredfield" onFocus="if(this.value == 'Message *') { this.value = ''; }" onBlur="if(this.value == '') { this.value = 'Message *'; }">Message *</textarea>
+						<button type="submit" name="send">Send</button>
+						<span class="errormessage">Error! Please correct marked fields.</span> <span class="successmessage">Message send successfully!</span> <span class="sendingmessage">Sending...</span>
+					</form>
+				</div>
+			</div>
+			<div class="clear"></div>
+		</div>
+	</div>
+</div>
+<!-- container --> 
+
+<!-- Sub-Footer
+	================================================== --> 
+
+<!-- Change to class="container subfooterwrap full" for a full-width subfooter -->
+<div class="container subfooterwrap">
+	<div class="subfooter">
+		<div class="eight columns">© 2015 ThemePunch Apex Responsive Portfolio Template</div>
+		<div class="eight columns">
+			<ul class="socialicons">
+				<li><a href="http://www.facebook.com/themepunchofficial" class="social_facebook"></a></li>
+				<li><a href="http://www.twitter.com/themepunch" class="social_twitter"></a></li>
+				<li><a href="https://www.google.com/+ThemePunch" class="social_googleplus"></a></li>
+				<li><a href="http://www.youtube.com/user/ThemePunch" class="social_vimeo"></a></li>
+				<li><a href="http://www.codecanyon.net/user/themepunch/portfolio" class="social_rss"></a></li>
+			</ul>
+			<div class="socialtext">Stay in Touch via Social Networks.</div>
+		</div>
+	</div>
+</div>
+
+<!-- End Document
+================================================== --> 
+
+<!-- Scripts
+================================================== --> 
+<script src="js/jquery-1.7.min.js" type="text/javascript"></script> 
+<script src="js/jquery.easing.1.3.js" type="text/javascript"></script> 
+<script src="js/jquery.animate-colors-min.js" type="text/javascript"></script> 
+<!--/***********************************************
+    * Smooth Navigational Menu- (c) Dynamic Drive DHTML code library (www.dynamicdrive.com)
+    * This notice MUST stay intact for legal use
+    * Visit Dynamic Drive at http://www.dynamicdrive.com/ for full source code
+    ***********************************************/--> 
+<script src="js/ddsmoothmenu.js" type="text/javascript"></script> 
+<script src="js/jquery.cssAnimate.mini.js" type="text/javascript"></script> 
+<script src="js/jquery.fitvids.js" type="text/javascript"></script> 
+<script src="js/jquery.flexslider-min.js" type="text/javascript"></script> 
+<script src="js/jquery.prettyPhoto.js" type="text/javascript"></script> 
+<script src="js/screen.js" type="text/javascript"></script>
+</body>
+</html>

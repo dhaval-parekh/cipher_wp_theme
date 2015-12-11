@@ -1,0 +1,54 @@
+/*
+Theme Name: cipher
+Theme URI: 
+Author: Dhaval Parekh 
+Author URI: about.me/dmparekh
+Description: 
+Version: 1.0
+License: 
+License URI: 
+Tags: 
+Text Domain: 
+ 
+This theme, like WordPress, is licensed under the GPL.
+For 
+*/
+
+
+@charset "utf-8";
+/* CSS Document */
+img{ height:auto; max-width:100%; }
+
+.container{ border:none; }
+/*****	Header	*****/
+.footer .sixteen.columns>div:nth-child(1){ margin-left:0; }
+.footer .sixteen.columns>div:nth-child(4){ margin-right:0; }
+@media only screen and (max-width: 1200px){
+}
+@media only screen and (max-width: 991px){
+}
+@media only screen and (max-width: 768px){
+}
+@media only screen and (max-width: 480px){
+}
+/*****	Footer	*****/
+
+/*****	Utility	*****/
+.clearfix::before, .clearfix::after, .row::before, .row::after,
+.clear{ clear:both; content:''; }
+.flexslider .slides img{ width:100%; }
+
+/*****	Sections	*****/
+/* page */
+.page-feature-image{ text-align:center;  }
+.page-feature-image img{width:100%; height:auto; }
+.page-content{ clear:both; }
+.blogdate span{ font-size:11px; }
+@media only screen and (max-width: 1200px){
+}
+@media only screen and (max-width: 991px){
+}
+@media only screen and (max-width: 768px){
+}
+@media only screen and (max-width: 480px){
+}
