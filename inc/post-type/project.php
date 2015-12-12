@@ -73,9 +73,8 @@ add_action( 'init', 'cipher_project_post_type');
 /**	Add Meta box to 	**/
 
 add_action('add_meta_boxes', 'our_project_meta_box');
-function our_project_meta_box()
-{
-    add_meta_box('our_project', __('Project Information', 'cipher'), 'project_meta_action', 'project', 'side', 'high' );
+function our_project_meta_box(){
+	add_meta_box('our_project', __('Project Information', 'cipher'), 'project_meta_action', 'project', 'side', 'high' );
 }
 function project_meta_action($post) {  
     		$project = array();
@@ -87,11 +86,37 @@ function project_meta_action($post) {
 	<div class="row">
 		<div class="form-group">
 			<label class="form-label">Prices</label>
-			<div class="form-control-container"><input type="number" name="price" class="form-control" value="<?php echo $project['price']; ?>"></div>	<div class="clear"></div>
+			<div class="form-control-container"><input type="number" name="price" class="form-control" value="<?php echo $project['price']; ?>"></div><div class="clear"></div>
 		</div>
 		<div class="form-group">
+		<?php
+			// References = https://codex.wordpress.org/Function_Reference/get_users
+			$user_args = array('role'=> 'client',);
+			$user_list = get_users($user_args);
+			$users = array();
+			foreach($user_list as $user):
+				$users[$user->ID]['id'] = $user->ID;
+				$users[$user->ID]['name'] = $user->data->display_name;
+				$users[$user->ID]['email'] = $user->data->user_email;
+			endforeach
+			
+			
+		?>
 			<label class="form-label">Client</label>
-			<div class="form-control-container"><input type="text" name="client" class="form-control" value="<?php echo $project['client']; ?>"></div>	<div class="clear"></div>
+			<div class="form-control-container">
+				<select name="client" required class="form-control">
+					<option selected disabled>Select Client</option>
+					<?php
+						foreach($users as $user):
+							$selected = $user['id']==$project['client']?' selected ':'';
+							echo '<option value="'.$user['id'].'" title="'.$user['email'].'" '.$selected.'>'.$user['name'].'</option>';
+						endforeach;
+					?>
+				</select>
+				<?php /* ?><input type="text" name="client" class="form-control" value="<?php echo $project['client']; ?>"><?php */ ?>
+			</div>	
+			<div class="clear">
+		</div>
 		</div>
 		<div class="form-group">
 			<label class="form-label">Demo Link</label>
@@ -101,7 +126,7 @@ function project_meta_action($post) {
 			<label class="form-label">Status</label>
 			<div class="form-control-container">
 				<?php $status = ['Pendding','Running','Hold','Revision','Complated','Cancled']; ?>
-				<select name="status">
+				<select name="status" class="form-control">
 					<?php
 						foreach($status as $option):
 							if($project['status'] == $option):

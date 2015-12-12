@@ -1,6 +1,6 @@
 <?php
 /**
- *	Template Name: Blog Template
+ *	Template Name: Project List Template
  *	Author : Dhaval Parekh
  *
  */
@@ -20,7 +20,7 @@
 					<div class="page-content">
 						<?php
 							$post_per_page = 5;
-							$query_args = array('post_type'=>'post','posts_per_page'=>$post_per_page,);
+							$query_args = array('post_type'=>'project','posts_per_page'=>$post_per_page,);
 							render_blog_list($query_args);
 						?>
 					</div>

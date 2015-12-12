@@ -25,9 +25,9 @@ if(!function_exists('cipher_theme_setup')):
 		 *
 		 * See: https://codex.wordpress.org/Post_Formats
 		 */
-		//add_theme_support( 'post-formats', array( 'image', 'video',  'link', 'gallery', ) );	
-		wp_enqueue_style( 'cipher-admin', get_template_directory_uri() . '/css/admin.css', array(), '1.0' );
-		wp_enqueue_style( 'font-awesome', get_template_directory_uri() . '/font-awesome-4.2.0/css/font-awesome.min.css', array(), '1.0' );
+		//add_theme_support( 'post-formats', array( 'image', 'video',  'link', 'gallery', ) );
+		//wp_enqueue_style( 'cipher-admin', get_template_directory_uri() . '/css/admin.css', array(), '1.0' );
+		//wp_enqueue_style( 'font-awesome', get_template_directory_uri() . '/font-awesome-4.2.0/css/font-awesome.min.css', array(), '1.0' );
 		
 		$background_option = array(
 						'default-color'          => '#343434',
@@ -104,8 +104,16 @@ if(function_exists('register_sidebar')):
 			'after_title'=>'</h5>',
 		)
 	);
-	
 endif;
+
+// New User Role For Client
+function cipher_add_user_role_client(){
+	$result = add_role( 'client', 'Client', array( 'read' => true, 'level_0' => true ) );	
+	if( $result !== NULL ){ return true; }
+	return false;
+}
+//cipher_add_user_role_client();
+//register_activation_hook( __FILE__, 'cipher_add_user_role_client' );
 
 /**
  *	Function : cropText
@@ -117,6 +125,11 @@ function cropText($str, $limit){
 	$str = preg_replace('/\[.*\]/', '', $str);
 	return strlen($str)<$limit?$str:substr($str,0,$limit).'...';
 }
+
+
+// Import Library
+require_once(THEME_INC_DIR.'lib/class.form.php');
+require_once(THEME_INC_DIR.'frontend.helper.php');
 
 // Import Files
 require_once('inc/post-type/project.php');
@@ -132,3 +145,6 @@ require_once('inc/widgets/latest_post_widget.php');
 
 // Import Admin 
 require_once(THEME_ADMIN_DIR.'index.php');
+
+// helper function
+function display($obj){ echo '<pre style="overflow:auto:max-height:256px;clear:both;">'; print_r($obj); echo '</pre>'; }

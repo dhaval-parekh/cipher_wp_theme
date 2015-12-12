@@ -23,8 +23,8 @@ class cipher_latest_post_widget extends Wp_Widget{
 			echo '<input type="text" name="'.$this->get_field_name('title').'" value = "'.esc_attr($title).'"  style="width:100%;" placeholder="Enter Title" >';
 		echo '</p>';
 		
-		echo '<p><label><b>Title :</b></label>';
-			echo '<select name="'.$this->get_field_name('post_type').'">';
+		echo '<p><label><b>Post Type :</b></label>';
+			echo '<select name="'.$this->get_field_name('post_type').'" style="width:100%;">';
 				foreach($post_type_list as $post){
 					if($post_type == $post){
 						echo '<option value="'.$post.'" selected>'.$post.'</option>';

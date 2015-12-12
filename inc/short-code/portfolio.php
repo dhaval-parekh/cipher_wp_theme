@@ -7,11 +7,19 @@ if(! function_exists('cipher_protfolio')):
 			$post_types = get_post_types();
 			$args['post_type'] = trim($args['post_type']);
 			if(!( isset($args['post_type']) && (! empty($args['post_type'])) && in_array($args['post_type'],$post_types) )){ return false; }
+			$request_post_type = $args['post_type'];
+			$terms = array();
 			
+			$taxonomies_list = get_object_taxonomies($request_post_type);
 			$terms_args = array('orderby'=> 'id', 'order'=> 'ASC');
-			
-			//$terms =  get_terms('service_type',$terms_args); 			
+			//$taxonomies_list = [$taxonomies_list[0]];
+			foreach($taxonomies_list as $taxonomy):
+				$terms =  array_merge($terms,get_terms('service_type',$terms_args)); 
+				
+			endforeach;
+
 		?>
+		<div class="row">
 			<?php if(isset($args['title']) && (!empty($args['title']))) : ?>
 			<div class="sixteen columns row divide">
 				<h3 class="titledivider"><?php echo $args['title']; ?></h3>
@@ -21,19 +29,14 @@ if(! function_exists('cipher_protfolio')):
 				<div class="dividerline"></div>
 			</div>
 			<?php endif; ?>
-			<?php $args = ['post_type'=>$args['post_type']]; $query = new WP_Query($args); ?>
 			<?php 
 				$nav_lists = array();
-				while($query->have_posts()): $query->the_post();
-					$catagories = (array) get_the_category(get_the_ID()); 
-					foreach($catagories as $cat):
-						$nav_lists[$cat->slug] = $cat->name;
-					endforeach;
-				endwhile;
+				foreach($terms as $cat):
+					$nav_lists[$cat->slug] = $cat->name;
+				endforeach;
 			?>
 			<!-- Portfolio Item Label -->
 				<div class="sixteen columns row portfolio_filter">
-				<?php //var_dump($post_types); ?>
 					<ul>
 						<li><a class="portfolio_selector" data-group="all-group" href="#">All Projects</a><span>|</span></li>
 						<?php 
@@ -49,10 +52,15 @@ if(! function_exists('cipher_protfolio')):
 				<?php if($query->have_posts()): ?>
 					<?php 
 						while($query->have_posts()): $query->the_post(); 
-							$catagories = (array) get_the_category(get_the_ID()); 
+							$catagories = array();
+							foreach($taxonomies_list as $taxonomy):
+								$catagories = array_merge($catagories, get_the_terms($post->ID,$taxonomy));
+							endforeach;
 							$subline = '';
 							$class = '';
+							
 							foreach($catagories as $cat){ $class.=' '.$cat->slug.' '; $subline.=$cat->name.', '; }
+							$subline = rtrim(trim($subline),',');
 							?>
 							<div class="four columns teaser all-group <?php echo $class; ?> ">
 								<?php if(has_post_thumbnail(get_the_ID())): ?>
@@ -69,6 +77,7 @@ if(! function_exists('cipher_protfolio')):
 				<?php endif; ?>
 				
 			</div>
+		</div>
 		<?php
 		wp_reset_query();
 	}

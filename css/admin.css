@@ -8,5 +8,5 @@
 .form-label{ width:30%; float:left; font-weight:700; }
 .form-control-container{ width:70%; float:left;}
 .form-control{ width:100%; }
+.container{ width:100%; min-height:512px; }
 
-.container{ width:100%; min-height:512px; border:1px solid; }

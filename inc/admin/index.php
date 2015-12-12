@@ -9,7 +9,7 @@ endif;
 
 if(!function_exists('cipher_admin_option')):
 	function cipher_admin_option(){
-		require_once(THEME_INC_DIR.'lib/class.form.php');
+		
 		require_once(THEME_ADMIN_DIR.'dashboard/index.php');
 	}
 endif;
@@ -17,7 +17,7 @@ endif;
 // Admin Theme Enqueue
 if(!function_exists('cipher_admin_enqueue')):
 	function cipher_admin_enqueue(){
-		//wp_enqueue_style('cipher-bootstrap', get_template_directory_uri().'/css/bootstrap.min.css');	
+		//wp_enqueue_style('cipher-bootstrap', get_template_directory_uri().'/css/bootstrap.min.css');
 		wp_enqueue_style('cipher-bootstrap', get_template_directory_uri().'/css/admin.css');	
 	}
 endif;
