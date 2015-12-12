@@ -1,3 +1,5 @@
 # Cipher WordPress Theme 
 
-"Cipher WordPress Theme dmp" .
+"Cipher WordPress Theme " .
+
+
