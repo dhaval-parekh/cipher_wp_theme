@@ -61,6 +61,14 @@ if(!function_exists('cipher_theme_setup')):
 endif;
 add_action('after_setup_theme','cipher_theme_setup');
 
+// New User Role For Client
+function cipher_add_user_role_client(){
+	$result = add_role( 'client', 'Client', array( 'read' => true,'upload_files' => true, 'level_0' => true ) );	
+	if( $result !== NULL ){ return true; }
+	return false;
+}
+register_activation_hook( __FILE__, 'cipher_add_user_role_client' );
+
 // Thumbanail suport
 if (function_exists('add_theme_support')):
 	add_theme_support('post-thumbnails');	 
@@ -106,12 +114,7 @@ if(function_exists('register_sidebar')):
 	);
 endif;
 
-// New User Role For Client
-function cipher_add_user_role_client(){
-	$result = add_role( 'client', 'Client', array( 'read' => true, 'level_0' => true ) );	
-	if( $result !== NULL ){ return true; }
-	return false;
-}
+
 //cipher_add_user_role_client();
 //register_activation_hook( __FILE__, 'cipher_add_user_role_client' );
 

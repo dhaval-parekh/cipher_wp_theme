@@ -12,7 +12,7 @@
 			$demo_url = isset($post_meta['demolink'])&&!empty($post_meta['demolink'])?$post_meta['demolink'][0]:get_the_permalink();
 			?>
 				<div class="sixteen columns row divide notop">
-					<h3 class="titledivider">The Blog.</h3>
+					<h3 class="titledivider"><?php the_title(); ?></h3>
 					<div class="dividerline"></div>
 				</div>
 				<div class="eleven columns row content left">

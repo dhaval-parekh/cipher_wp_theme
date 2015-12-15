@@ -60,8 +60,10 @@ if(!function_exists('cipher_project_post_type')):
 			'description'   => 'Holds our Project and Project specific data',
 			'public'        => true,
 			'menu_position' => 20,
-			'supports'      => array( 'title', 'editor', 'thumbnail', 'excerpt', 'comments' ),
+			'supports'      => array( 'title', 'editor', 'thumbnail', 'excerpt', ), // 'comments'
 			'has_archive'   => true,
+			'capability_type'     => array('cipher_project','cipher_projects'),
+			'map_meta_cap'  => true,
 			'taxonomies'=>array('project_type')
 		);
 		register_post_type( 'project', $args );	
@@ -70,8 +72,34 @@ endif;
 
 add_action( 'init', 'cipher_project_post_type');
 
-/**	Add Meta box to 	**/
+// Giving up Permissions
+//add_action('admin_init','cipher_add_role_caps',999);
+function cipher_add_role_caps() {
 
+	// Add the roles you'd like to administer the custom post types
+	$roles = array('client','administrator'); // may be developer
+	
+	// Loop through each role and assign capabilities
+	foreach($roles as $the_role) { 
+		$role = get_role($the_role);
+	
+		$role->add_cap( 'read' );
+		$role->add_cap( 'read_cipher_project');
+		$role->add_cap( 'read_private_cipher_projects' );
+		$role->add_cap( 'edit_cipher_project' );
+		$role->add_cap( 'edit_cipher_projects' );
+		$role->add_cap( 'edit_others_cipher_projects' );
+		$role->add_cap( 'edit_published_cipher_projects' );
+		$role->add_cap( 'publish_cipher_projects' );
+		$role->add_cap( 'delete_others_cipher_projects' );
+		$role->add_cap( 'delete_private_cipher_projects' );
+		$role->add_cap( 'delete_published_cipher_projects' );
+	
+	}
+}
+
+
+/**	Add Meta box to 	**/
 add_action('add_meta_boxes', 'our_project_meta_box');
 function our_project_meta_box(){
 	add_meta_box('our_project', __('Project Information', 'cipher'), 'project_meta_action', 'project', 'side', 'high' );

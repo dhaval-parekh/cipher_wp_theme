@@ -9,15 +9,13 @@ if(! function_exists('cipher_protfolio')):
 			if(!( isset($args['post_type']) && (! empty($args['post_type'])) && in_array($args['post_type'],$post_types) )){ return false; }
 			$request_post_type = $args['post_type'];
 			$terms = array();
-			
+			$taxonomies_list = array();
 			$taxonomies_list = get_object_taxonomies($request_post_type);
 			$terms_args = array('orderby'=> 'id', 'order'=> 'ASC');
 			//$taxonomies_list = [$taxonomies_list[0]];
 			foreach($taxonomies_list as $taxonomy):
 				$terms =  array_merge($terms,get_terms('service_type',$terms_args)); 
-				
 			endforeach;
-
 		?>
 		<div class="row">
 			<?php if(isset($args['title']) && (!empty($args['title']))) : ?>
