@@ -1,4 +1,4 @@
-<?
+<?php
 /**
  *	 Single Blog Page 
  */
@@ -41,7 +41,7 @@
 								<?php if(count($catagories)>=1): ?>
 									in <?php foreach($catagories as $cat): ?><a href="<?php echo get_category_link($cat->term_id); ?>"><?php echo $cat->name; ?></a> ,<?php endforeach; ?>&nbsp; |
 								<?php endif; ?>
-								 &nbsp; by <?php the_author(); ?> &nbsp; | &nbsp; <?php comments_popup_link( 'Leave a Comment', '1 Comment', '% Comments' );?>
+								 <!--&nbsp; by <?php the_author(); ?> &nbsp; --><?php //echo '| &nbsp; '.comments_popup_link( 'Leave a Comment', '1 Comment', '% Comments' );?>
 							</div>
 							<div class="postcontent">
 								<?php $pattern = "/<p[^>]*><\\/p[^>]*>/"; echo preg_replace($pattern, '', get_the_content()); ?>

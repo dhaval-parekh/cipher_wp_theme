@@ -150,4 +150,6 @@ require_once('inc/widgets/latest_post_widget.php');
 require_once(THEME_ADMIN_DIR.'index.php');
 
 // helper function
-function display($obj){ echo '<pre style="overflow:auto:max-height:256px;clear:both;">'; print_r($obj); echo '</pre>'; }
+if( ! function_exists('display')){
+	function display($obj){ echo '<pre style="overflow:auto:max-height:256px;clear:both;">'; print_r($obj); echo '</pre>'; }
+}

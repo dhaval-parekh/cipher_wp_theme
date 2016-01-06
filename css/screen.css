@@ -794,12 +794,14 @@ img.aligncenter {
 	box-shadow: 0px 0px 6px rgba(0, 0, 0, 0.2);
     cursor: default;
 }
-
-
-
 iframe.twitter-timeline{
 	width:100% !important;
 	min-width:100% !important;
 	max-width:100% !important;
 	display:none;
 }
+.blogpages{ float:none;clear:both; }
+.blogpages ul{ display:block;clear:both;width:100%;text-align:center }
+.blogpages li{ float:none; }
+.blogpages li.previous{ float:left; }
+.blogpages li.next{ float:right; }

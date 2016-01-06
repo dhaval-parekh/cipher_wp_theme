@@ -10,7 +10,6 @@
 					<?php //if(has_post_thumbnail(get_the_Id())){ echo '<div class="page-feature-image banner"><a href="'.get_the_permalink().'" title="'.get_the_title().'" >'; the_post_thumbnail();echo '</a></div>'; } ?>
 					<div class="page-content">
 						<?php 
-						
 							while(have_posts()): the_post();  
 								blog_list_single_componemet(); 
 						 	endwhile; 
