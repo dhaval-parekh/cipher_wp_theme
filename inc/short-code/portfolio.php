@@ -4,6 +4,7 @@ add_action('init',function(){ add_shortcode('cipher_portfolio','cipher_protfolio
 
 if(! function_exists('cipher_protfolio')):
 	function cipher_protfolio($args){
+			ob_start();
 			$post_types = get_post_types();
 			$args['post_type'] = trim($args['post_type']);
 			if(!( isset($args['post_type']) && (! empty($args['post_type'])) && in_array($args['post_type'],$post_types) )){ return false; }
@@ -16,8 +17,20 @@ if(! function_exists('cipher_protfolio')):
 			foreach($taxonomies_list as $taxonomy):
 				$terms =  array_merge($terms,get_terms('service_type',$terms_args)); 
 			endforeach;
+			
+			// portfolio style 
+			$portfolio_class = array();
+			$portfolio_class['container'] =  'portfolio4column';
+			$portfolio_class['teasers'] = 'teasers';
+			$portfolio_class['columns'] = 'four';
+			if( isset($args['type']) && $args['type'] == 'large'){
+				$portfolio_class['container'] =  'portfolio2column';
+				$portfolio_class['teasers'] = 'teasers_large';
+				$portfolio_class['columns'] = 'eight';
+			}
+			
 		?>
-		<div class="row">
+		<div class="row <?php echo $portfolio_class['container']; ?>">
 			<?php if(isset($args['title']) && (!empty($args['title']))) : ?>
 			<div class="sixteen columns row divide">
 				<h3 class="titledivider"><?php echo $args['title']; ?></h3>
@@ -45,7 +58,7 @@ if(! function_exists('cipher_protfolio')):
 					</ul>
 				</div>
 			<!-- Portfolio Item -->
-			<div class="sixteen columns row teasers portfolio">
+			<div class="sixteen columns row <?php echo $portfolio_class['teasers']; ?> portfolio">
 				<?php $args = ['post_type'=>$args['post_type']]; $query = new WP_Query($args); ?>
 				<?php if($query->have_posts()): ?>
 					<?php 
@@ -60,7 +73,7 @@ if(! function_exists('cipher_protfolio')):
 							foreach($catagories as $cat){ $class.=' '.$cat->slug.' '; $subline.=$cat->name.', '; }
 							$subline = rtrim(trim($subline),',');
 							?>
-							<div class="four columns teaser all-group <?php echo $class; ?> ">
+							<div class="<?php echo $portfolio_class['columns']; ?> columns teaser all-group <?php echo $class; ?> ">
 								<?php if(has_post_thumbnail(get_the_ID())): ?>
 									<a href="<?php the_permalink(); ?>" data-text="» Read More" class="hovering"><?php the_post_thumbnail('portfolio-thumbnail'); ?></a>
 								<?php else: ?>
@@ -78,5 +91,9 @@ if(! function_exists('cipher_protfolio')):
 		</div>
 		<?php
 		wp_reset_query();
+		$content = ob_get_contents();
+		ob_end_clean();
+		return $content;
+		
 	}
 endif;

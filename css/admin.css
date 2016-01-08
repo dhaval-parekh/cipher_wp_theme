@@ -8,5 +8,6 @@
 .form-label{ width:30%; float:left; font-weight:700; }
 .form-control-container{ width:70%; float:left;}
 .form-control{ width:100%; }
-.container{ width:100%; min-height:512px; }
+.cipher_admin_container { width:100%; min-height:512px; padding:45px 0; }
+
 

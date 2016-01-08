@@ -112,6 +112,15 @@ if(function_exists('register_sidebar')):
 			'after_title'=>'</h5>',
 		)
 	);
+	register_sidebar(array(
+			'name'=>'Contact Page Sidebar Widget Area',
+			'id'=>'contact-sidebar-widgets',
+			'before_widget'=>'<div class="widget">',
+			'after_widget'=>'</div>',
+			'before_title'=>'<h5 class="sidebar-widget-title">',
+			'after_title'=>'</h5>',
+		)
+	);
 endif;
 
 
@@ -132,6 +141,8 @@ function cropText($str, $limit){
 
 // Import Library
 require_once(THEME_INC_DIR.'lib/class.form.php');
+require_once(THEME_INC_DIR.'lib/class.datatable.php');
+require_once(THEME_INC_DIR.'lib/helper.app.php');
 require_once(THEME_INC_DIR.'frontend.helper.php');
 
 // Import Files
@@ -140,6 +151,7 @@ require_once('inc/post-type/service.php');
 
 // Import Short code File
 require_once('inc/short-code/portfolio.php');
+require_once('inc/short-code/contact.php');
 
 // Import widgets
 require_once('inc/widgets/print_shortcode.php');

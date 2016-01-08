@@ -3,7 +3,7 @@
 // Used in blog.template.php file 
 if(! function_exists('render_blog_list')):
 	function render_blog_list($query_args){
-		$post_per_page = 1;
+		$post_per_page = 5;
 		$current_page = get_query_var( 'paged' );
 		$query_args['posts_per_page']=$post_per_page;
 		$query_args['paged'] = $current_page;
@@ -81,13 +81,13 @@ function blog_list_single_componemet(){
 					</a>
 				</div>
 			<?php endif; ?>
-			<div class="one column row alpha">
+			<?php /*?><div class="one column row alpha"> 
 				<div class="blogdate">
 					<div class="day"><?php the_time('d'); ?></div>
 					<span><?php the_time('M Y')?></span></a>
 				</div>
-			</div>
-			<div class="nine columns row offset-by-one omega">
+			</div><?php */?><?php // For Date un Commnet this and replace class of below div  "eleven" to "nine" , replace "alpha" to "omega" and add class "offset-by-one" ?>
+			<div class="eleven columns row  alpha">
 				<div class="blogtitle">
 					<h4><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h4>
 				</div>

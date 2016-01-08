@@ -543,6 +543,7 @@ function addForm(formtype) {
 	function validator() {
 		
 		var emailcheck = /^([\w-]+(?:\.[\w-]+)*)@((?:[\w-]+\.)*\w[\w-]{0,66})\.([a-z]{2,6}(?:\.[a-z]{2})?)$/i;
+		var phonenocheck = /^\d{10}$/;  
 		var othercheck = /.{4}/;
 		var noerror = true;
 		
@@ -550,7 +551,7 @@ function addForm(formtype) {
 													 
 			var fieldname = jQuery(this).attr('name');
 			var value = jQuery(this).val();
-			if(value == "Name *" || value == "Email *" || value == "Message *"){
+			if(value == "Name *" || value == "Email *" || value == "Message *" || value == "Skype *" || value == "Phone *"){
 				value = "";	
 			}
 
@@ -561,6 +562,13 @@ function addForm(formtype) {
 				} else {
 					jQuery(this).removeClass("formerror");
 				}	
+			}else if(fieldname == "phone"){
+				if (!phonenocheck.test(value)) {
+					jQuery(this).addClass("formerror");
+					noerror = false;
+				} else {
+					jQuery(this).removeClass("formerror");
+				}
 			}else{
 				if (!othercheck.test(value)) {
 					jQuery(this).addClass("formerror");
@@ -588,6 +596,7 @@ function addForm(formtype) {
 	
 	function sendemail() {
 		formid.find(".successmessage").hide();
+		formid.find('.customerrormessage').hide();
 		var phpfile = "";
 		if(formtype=="#contactform"){
 			phpfile = "php/contact.php";
@@ -596,20 +605,51 @@ function addForm(formtype) {
 		}else{
 			phpfile = "";
 		}
+		phpfile = ajaxurl;
+		var data = formid.serialize();
+		data += '&action=cipher_contact_form_submit';
 		if (validator()) {
 			if(!emailsend){
-				emailsend = true;
+				
 				formid.find(".errormessage").hide();
 				formid.find(".sendingmessage").show();
-				jQuery.post(phpfile, formid.serialize(), function() {
+				formid.find('.customerrormessage').hide().html('');
+				jQuery.ajax({
+					url:	phpfile,
+					type:'POST',
+					data:data,
+					success: function(data,status,xhr){
+						formid.find(".sendingmessage").hide();
+						if(data.status != 200){
+							alert(data.message);
+							formid.find('.customerrormessage').html(data.message);
+							formid.find('.customerrormessage').fadeIn();
+							return false;
+						}
+						formid.find('.customerrormessage').hide();
+						formid.find(".successmessage").fadeIn();
+						emailsend = true;
+						resetform();
+					},
+					error: function(xhr,status,error){
+						
+						formid.find(".sendingmessage").hide();
+						formid.find(".successmessage").hide();
+						
+						formid.find('.customerrormessage').html(error);
+						formid.find('.customerrormessage').fadeIn();
+					}
+				});
+				/*jQuery.post(phpfile, data, function() {
 					formid.find(".sendingmessage").hide();
 					formid.find(".successmessage").fadeIn();
 					resetform();
-				});
+				});*/
 			}
 		} 
 		return false
 	}
+	return false;
 }
 
 

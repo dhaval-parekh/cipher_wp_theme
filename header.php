@@ -30,11 +30,10 @@
 	<link rel="stylesheet" type="text/css" href="<?php echo get_template_directory_uri(); ?>/css/skeleton.css" />
 	<link rel="stylesheet" type="text/css" href="<?php echo get_template_directory_uri(); ?>/css/screen.css" />
 	<link rel="stylesheet" type="text/css" href="<?php echo get_template_directory_uri(); ?>/style.css" />
-	
 	<script type="text/javascript">
 		var template_dir = <?php echo "'".get_template_directory_uri()."';"; ?>
+		var ajaxurl = <?php echo "'".admin_url('admin-ajax.php')."';"; ?>; 
 	</script>
-	
 </head>
 <body <?php body_class(); ?>>
 	<!-- Site Backgrounds	================================================== --> 
@@ -43,7 +42,6 @@
 	<!-- Remove or uncomment depending on if you want a background image or tile --> 
 	<!--<div class="tiledbackground"></div>--> 
 	<?php 
-		
 		$background_image = get_background_image();
 		$background_image = (!empty($background_image))?get_background_image():get_template_directory_uri().'/images/bg.jpg'; 
 	?>

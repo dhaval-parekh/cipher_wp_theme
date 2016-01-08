@@ -116,7 +116,7 @@ function add_nba_membershipform(){
 					".$_REQUEST['rdiHelp3'].",
 					".$_REQUEST['rdiHelp4']."
 				)";
-		echo $qryInsert."<br>"; 
+		//echo $qryInsert."<br>"; 
 		if($wpdb->query($qryInsert)){
 			echo '<script> alert("Your Request has Been Submited"); </script>';		
 		}else{

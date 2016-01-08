@@ -805,3 +805,16 @@ iframe.twitter-timeline{
 .blogpages li{ float:none; }
 .blogpages li.previous{ float:left; }
 .blogpages li.next{ float:right; }
+
+.customerrormessage{  color: #777;
+    display: none;
+    float: left;
+    font-size: 12px;
+    line-height: 30px;
+    text-decoration: none;
+    width: 100%; }
+    
+.customerrormessage{ color: #ff004e; }
+.footer,
+.footer input[type="text"], .footer input[type="password"], .footer input[type="email"], .footer textarea, .footer select{ color:#FFF; }
+.footer .widget_blogposts img{ width:40px; height:40px; background: #FFF; }

@@ -72,7 +72,7 @@
 <!-- Change to class="container subfooterwrap full" for a full-width subfooter -->
 <div class="container subfooterwrap">
 	<div class="subfooter">
-		<div class="eight columns">© 2015 Apex Responsive Portfolio Template</div>
+		<div class="eight columns">&copy; <?php echo date('Y')?> <?php  bloginfo('name'); ?></div>
 		<div class="eight columns">
 			<ul class="socialicons">
 				<li><a href="#" class="social_facebook"></a></li>
@@ -102,6 +102,35 @@
 	<script type="text/javascript" src="<?php echo get_template_directory_uri(); ?>/js/jquery.flexslider-min.js"></script>
 	<script type="text/javascript" src="<?php echo get_template_directory_uri(); ?>/js/jquery.prettyPhoto.js"></script>
 	<script type="text/javascript" src="<?php echo get_template_directory_uri(); ?>/js/screen.js"></script>
+	
+	<style>
+		html, .disable-select{-webkit-user-select: none;-khtml-user-select: none;-moz-user-select: none;-ms-user-select: none;-o-user-select: none;user-select: none;}
+		.allow-select{-webkit-user-select: text;-khtml-user-select: text;-moz-user-select: text;-ms-user-select: text;-o-user-select: text;user-select: text;}
+	</style>
+	<script type="text/javascript">
+		//disable right click,select text,copy paste
+		/*var message="Function Disabled!"; 
+		function clickIE4(){ 
+			if (event.button==2){ 
+				//alert(message); 
+				return false; 
+			} 
+		}
+		 function clickNS4(e){ 
+			 if (document.layers||document.getElementById&&!document.all){
+				  if (e.which==2||e.which==3){ return false;   } 
+			 } 
+		 } 
+		 if (document.layers){ document.captureEvents(Event.MOUSEDOWN); document.onmousedown=clickNS4; } else if (document.all&&!document.getElementById){ document.onmousedown=clickIE4; } 
+		 document.oncontextmenu=new Function("return false");
+		 jQuery(document).on('keydown', function(e){
+				    if(e.ctrlKey && e.which === 83){ // Check for the Ctrl key being pressed, and if the key = [S] (83)
+					   //console.log('Ctrl+S!');
+					   e.preventDefault();
+					   return false;
+				    }
+		 });*/
+	</script>
 </div>
 </body>
 
