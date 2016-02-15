@@ -77,10 +77,10 @@ if(! function_exists('cipher_contact_form_submit')):
 			header('HTTP/1.1 400 Please check your information fields.');
 			die(json_encode($response));	
 		}
-		$post['name'] = mysql_real_escape_string($post['name']);
+		$post['name'] = esc_sql($post['name']);
 		$post['email'] = isset($post['email'])?$post['email']:'';
 		$post['phone'] = isset($post['phone'])&&is_numeric($post['phone'])?$post['phone']:'';
-		$post['message'] = mysql_real_escape_string($post['message']);
+		$post['message'] = esc_sql($post['message']);
 		
 		$query = "INSERT INTO ".$table_name." (contact_id,name,email,skype,phone,message,request_date) VALUES
 				(DEFAULT,'".$post['name']."','".$post['email']."','".$post['skype']."','".$post['phone']."','".$post['message']."',DEFAULT)";
@@ -95,7 +95,7 @@ if(! function_exists('cipher_contact_form_submit')):
 		die(json_encode($response));
 	}
 endif;
-
+//esc_sql
 if(! function_exists('cipher_create_contact_form_table')):
 	function cipher_create_contact_form_table(){
 		global $wpdb;

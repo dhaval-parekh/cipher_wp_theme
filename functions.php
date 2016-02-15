@@ -138,7 +138,6 @@ function cropText($str, $limit){
 	return strlen($str)<$limit?$str:substr($str,0,$limit).'...';
 }
 
-
 // Import Library
 require_once(THEME_INC_DIR.'lib/class.form.php');
 require_once(THEME_INC_DIR.'lib/class.datatable.php');
